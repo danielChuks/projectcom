@@ -1,0 +1,15 @@
+
+.header {
+    max-height: 50rem;
+    overflow-y: hidden;
+    background-size: cover !important;
+    background-image: url(http://mrmrs.github.io/photos/u/011.jpg);   
+}
+.bigH{
+    justify-content: left;
+    display: flex;
+    color: #197f99;
+    font-family: monospace;
+    margin-top: 40px;
+    margin-left: 665px;
+}
