@@ -6,9 +6,19 @@ class Home extends React.Component{
         return (
             <div className='mt0'>
                 <Card />
+                
             </div>
             )
     }  
 }
 
 export default Home;
+
+
+
+
+
+
+
+
+

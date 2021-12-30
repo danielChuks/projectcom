@@ -10,6 +10,26 @@ class SignIn extends React.Component{
         } 
     };
 
+onEmailChange = (event) => {
+    this.setState({signInEmail: event.target.value})
+}
+onPasswordChange =(event) => {
+    this.setState({signInPassword: event.target.value})
+}  
+
+onSubmitSignIn = () => {  
+    fetch('http://localhost:6000/signin', {
+        method: 'POST',
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify({
+            email: this.state.signInEmail,
+            password: this.state.signInPassword
+        })
+    }).then(response => response.json())
+      .then(data => console.log)
+      .catch(err => console.log(err))
+}
+
 
 render(){
  
@@ -26,7 +46,7 @@ return(
                     type="email" 
                     name="email-address"  
                     id="email-address"
-                    />
+                    onChange={this.onEmailChange}/>
             </div>
             <div className="mv3">
                 <label  className="db fw6 lh-copy f5" htmlFor='password'>Password</label>
@@ -35,7 +55,7 @@ return(
                     type="password" 
                     name="password"   
                     id="password"
-                    />
+                    onChange={this.onPasswordChange}/>
             </div>
             </fieldset>
             <div className="">
@@ -43,7 +63,7 @@ return(
                     className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                     type="submit" 
                     value="Sign in"
-                    />
+                    onClick={this.onSubmitSignIn} />
             </div>
             <div className="lh-copy">
             <p className="b f5 link black  pointer "> Register </p>  
